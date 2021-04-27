@@ -1,10 +1,6 @@
-#include "students.h"
+#include "students.hpp"
+#include "teacher.hpp"
 using namespace std;
-
-void WriteAnswersToFile(ofstream &file, const Student &st, const double& a, const double& b, const double& c) {
-	file << a << " " << b << " " << c << " ";
-	file << st.countOfRoot << " " << st.root1 << " " << st.root2 << " " << st << "\n";
-}
 
 void StartSolveFromStudents(ifstream &equations, ofstream &answers) {
 	double a, b, c;
@@ -18,10 +14,10 @@ void StartSolveFromStudents(ifstream &equations, ofstream &answers) {
 		B.SolveEquation(a, b, c);
 		C.SolveEquation(a, b, c);
 		D.SolveEquation(a, b, c);
-		WriteAnswersToFile(answers, A, a, b, c);
-		WriteAnswersToFile(answers, B, a, b, c);
-		WriteAnswersToFile(answers, C, a, b, c);
-		WriteAnswersToFile(answers, D, a, b, c);
+		A.WriteAnswersToFile(answers, a, b, c);
+		B.WriteAnswersToFile(answers, a, b, c);
+		C.WriteAnswersToFile(answers, a, b, c);
+		D.WriteAnswersToFile(answers, a, b, c);
 	}
 }
 

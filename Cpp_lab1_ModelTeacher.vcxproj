@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EquationSolver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="students.cpp" />
+    <ClCompile Include="teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="students.h" />
+    <ClInclude Include="EquationSolver.hpp" />
+    <ClInclude Include="students.hpp" />
+    <ClInclude Include="teacher.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
