@@ -1,6 +1,6 @@
 #include "Bonus.hpp"
 
-void Recolourer::Do(RenderWindow& window) {
+void Recolourer::Do(RenderWindow& window, FieldOfSquares** squares) {
     Point posSq = position;
     Point newPos1 = { rand() % 9, rand() % 9 }, newPos2 = { rand() % 9, rand() % 9 };
     curColor = squares[position.x][position.y].s->getFillColor();
@@ -33,7 +33,7 @@ void Recolourer::Do(RenderWindow& window) {
     squares[position.x][position.y].s->setOutlineThickness(-0.5);
 }
 
-void Boom::Do(RenderWindow& window) {
+void Boom::Do(RenderWindow& window, FieldOfSquares** squares) {
     Point positions[4];
     for (auto pos : positions) {
         GenerateNewPosition(pos);

@@ -16,6 +16,9 @@ public:
     Boom boom;
     FieldOfSquares** sq; // main objects - field of squares 
     GameController();
+    // avoid copying 
+    GameController(const GameController&) = delete;
+    GameController& operator=(const GameController&) = delete;
 
     void DrawField(RenderWindow& window);
 

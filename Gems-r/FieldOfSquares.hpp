@@ -13,9 +13,10 @@ typedef struct {
 }Point;
 
 class FieldOfSquares {
-public:
+private:
     Point pointSq;
     int sizeSquare = 64;
+public: 
     RectangleShape* s;
     bool isToDelete = false;
 

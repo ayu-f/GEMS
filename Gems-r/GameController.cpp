@@ -2,8 +2,6 @@
 
 GameController::GameController() {
     CreateField();
-    recolourer.squares = sq;
-    boom.squares = sq;
 }
 
 void GameController::CreateField() {
@@ -199,11 +197,11 @@ void GameController::Move(RenderWindow& window, Point cur, Point prev) {
             Point tmpPos = GetPositionForBonus(cur);
             if (rand() % 2 == 0) {
                 boom.isActive = true;
-                boom.position = tmpPos;
+                boom.SetPosition(tmpPos);
             }
             else {
                 recolourer.isActive = true;
-                recolourer.position = tmpPos;
+                recolourer.SetPosition(tmpPos);
                 //recolourer.curColor = sq[tmpPos.x][tmpPos.y].s->getFillColor();
                 sq[tmpPos.x][tmpPos.y].s->setOutlineThickness(-4);
             }

@@ -36,7 +36,7 @@ void Game::Update(int& countOfClick, int& clickBonus, Point& prev) {
                     clickBonus++;
                     if (clickBonus >= 2) {
                         clickBonus = 0;
-                        controller.recolourer.Do(window);
+                        controller.recolourer.Do(window, controller.sq);
                         controller.recolourer.isActive = false;
                     }
                     continue;
@@ -51,7 +51,7 @@ void Game::Update(int& countOfClick, int& clickBonus, Point& prev) {
             }
         }
         if (controller.boom.isActive) {
-            controller.boom.Do(window);
+            controller.boom.Do(window, controller.sq);
             controller.boom.isActive = false;
         }
     }
